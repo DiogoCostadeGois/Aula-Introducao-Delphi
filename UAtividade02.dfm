@@ -1,4 +1,4 @@
-object FrmAtividade02: TFrmAtividade02
+object frmAtividade02: TfrmAtividade02
   Left = 0
   Top = 0
   Caption = 'Atividade 2'
@@ -11,65 +11,75 @@ object FrmAtividade02: TFrmAtividade02
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 45
-  object Label1: TLabel
-    Left = 144
-    Top = 29
-    Width = 92
-    Height = 53
-    Caption = 'Label1'
+  object lbl_resultado: TLabel
+    Left = 528
+    Top = 120
+    Width = 9
+    Height = 45
   end
-  object Label2: TLabel
-    Left = 391
-    Top = 29
-    Width = 92
-    Height = 53
-    Caption = 'Label2'
+  object lbl_sinal: TLabel
+    Left = 200
+    Top = 120
+    Width = 9
+    Height = 45
   end
   object edt_vlr_1: TEdit
-    Left = 8
-    Top = 29
+    Left = 24
+    Top = 117
     Width = 121
     Height = 53
     TabOrder = 0
   end
-  object Edit2: TEdit
-    Left = 256
-    Top = 29
+  object edt_vlr_2: TEdit
+    Left = 288
+    Top = 117
     Width = 121
     Height = 53
     TabOrder = 1
-    Text = 'Edit2'
   end
-  object Button1: TButton
-    Left = 14
-    Top = 168
-    Width = 115
+  object btn_somar: TButton
+    Left = 8
+    Top = 256
+    Width = 129
     Height = 57
-    Caption = 'Button1'
+    Caption = '+'
     TabOrder = 2
+    OnClick = btn_somarClick
   end
-  object Button2: TButton
-    Left = 144
-    Top = 168
-    Width = 115
-    Height = 57
-    Caption = 'Button1'
+  object btn_subtrair: TButton
+    Left = 152
+    Top = 252
+    Width = 129
+    Height = 65
+    Caption = '-'
     TabOrder = 3
+    OnClick = btn_subtrairClick
   end
-  object Button3: TButton
-    Left = 278
-    Top = 168
-    Width = 115
-    Height = 57
-    Caption = 'Button1'
+  object btn_multiplicar: TButton
+    Left = 304
+    Top = 252
+    Width = 129
+    Height = 65
+    Caption = '*'
     TabOrder = 4
+    OnClick = btn_multiplicarClick
   end
-  object Button4: TButton
-    Left = 414
-    Top = 168
-    Width = 115
-    Height = 57
-    Caption = 'Button1'
+  object btn_dividir: TButton
+    Left = 472
+    Top = 252
+    Width = 105
+    Height = 65
+    Caption = '/'
     TabOrder = 5
+    OnClick = btn_dividirClick
+  end
+  object btn_resultado: TButton
+    Left = 415
+    Top = 118
+    Width = 82
+    Height = 51
+    Caption = '='
+    TabOrder = 6
+    OnClick = btn_resultadoClick
   end
 end
