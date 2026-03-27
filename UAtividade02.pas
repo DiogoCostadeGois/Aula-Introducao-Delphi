@@ -7,80 +7,75 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TfrmAtividade02 = class(TForm)
-    lbl_resultado: TLabel;
-    lbl_sinal: TLabel;
+  Tfrm_Atividade02 = class(TForm)
     edt_vlr_1: TEdit;
     edt_vlr_2: TEdit;
-    btn_somar: TButton;
-    btn_subtrair: TButton;
-    btn_multiplicar: TButton;
-    btn_dividir: TButton;
+    lbl_operacao: TLabel;
+    lbl_resultado: TLabel;
+    btn_adicao: TButton;
+    btn_subtracao: TButton;
+    btn_multiplicacao: TButton;
+    btn_divisao: TButton;
     btn_resultado: TButton;
-    procedure btn_somarClick(Sender: TObject);
+    btn_limpar: TButton;
+    procedure btn_adicaoClick(Sender: TObject);
     procedure btn_resultadoClick(Sender: TObject);
-    procedure btn_subtrairClick(Sender: TObject);
-    procedure btn_multiplicarClick(Sender: TObject);
-    procedure btn_dividirClick(Sender: TObject);
+    procedure btn_subtracaoClick(Sender: TObject);
+    procedure btn_multiplicacaoClick(Sender: TObject);
+    procedure btn_divisaoClick(Sender: TObject);
+    procedure edt_vlr_1Change(Sender: TObject);
+    procedure edt_vlr_2Change(Sender: TObject);
   private
+  var n1, n2, total : double;
     { Private declarations }
   public
     { Public declarations }
   end;
 
 var
-  frmAtividade02: TfrmAtividade02;
+  frm_Atividade02: Tfrm_Atividade02;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfrmAtividade02.btn_dividirClick(Sender: TObject);
+procedure Tfrm_Atividade02.btn_adicaoClick(Sender: TObject);
 begin
-    lbl_sinal.Caption := '/';
+  lbl_operacao.Caption := '+';
+  total := n1 + n2;
 end;
 
-procedure TfrmAtividade02.btn_multiplicarClick(Sender: TObject);
+procedure Tfrm_Atividade02.btn_divisaoClick(Sender: TObject);
 begin
-    lbl_sinal.Caption := '*';
+  lbl_operacao.Caption := '/';
+  total := n1 / n2;
 end;
 
-procedure TfrmAtividade02.btn_resultadoClick(Sender: TObject);
-var
-  n1, n2, resultado : Integer;
-  n1_float,n2_float, resultado_float : Double;
-  sinal: String;
+procedure Tfrm_Atividade02.btn_multiplicacaoClick(Sender: TObject);
 begin
-  n1 := StrToInt(edt_vlr_1.Text);
-  n2 := StrToInt(edt_vlr_2.Text);
-  sinal := lbl_sinal.Caption;
-
-  if (sinal = '+') then
-    resultado := n1 + n2;
-    lbl_resultado.Caption := IntToStr(resultado);
-  if (sinal = '-') then
-    resultado := n1 - n2;
-    lbl_resultado.Caption := IntToStr(resultado);
-  if (sinal = '*') then
-    resultado := n1 * n2;
-    lbl_resultado.Caption := IntToStr(resultado);
-  if (sinal = '/') then
-    n1_float := n1;
-    n2_float := n2;
-    resultado_float := n1_float / n2_float;
-    lbl_resultado.Caption := IntToStr(resultado);
-
-
+  lbl_operacao.Caption := 'x';
+  total := n1 * n2;
 end;
 
-procedure TfrmAtividade02.btn_somarClick(Sender: TObject);
+procedure Tfrm_Atividade02.btn_resultadoClick(Sender: TObject);
 begin
-  lbl_sinal.Caption := '+';
+   lbl_resultado.Caption := FloatToStr(total);
 end;
 
-procedure TfrmAtividade02.btn_subtrairClick(Sender: TObject);
+procedure Tfrm_Atividade02.btn_subtracaoClick(Sender: TObject);
 begin
-  lbl_sinal.Caption := '-';
+  lbl_operacao.Caption := '-';
+  total := n1 - n2;
+end;
+
+procedure Tfrm_Atividade02.edt_vlr_1Change(Sender: TObject);
+begin
+  n1 := StrToFloat(edt_vlr_1.Text);
+end;
+
+procedure Tfrm_Atividade02.edt_vlr_2Change(Sender: TObject);
+begin
+  n2 := StrToFloat(edt_vlr_2.Text);
 end;
 
 end.

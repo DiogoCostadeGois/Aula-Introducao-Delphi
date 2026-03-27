@@ -1,85 +1,97 @@
-object frmAtividade02: TfrmAtividade02
+object frm_Atividade02: Tfrm_Atividade02
   Left = 0
   Top = 0
-  Caption = 'Atividade 2'
-  ClientHeight = 441
-  ClientWidth = 624
+  Caption = 'Atividade 02'
+  ClientHeight = 183
+  ClientWidth = 524
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -32
+  Font.Height = -21
   Font.Name = 'Segoe UI'
   Font.Style = []
-  TextHeight = 45
-  object lbl_resultado: TLabel
-    Left = 528
-    Top = 120
-    Width = 9
-    Height = 45
+  TextHeight = 30
+  object lbl_operacao: TLabel
+    Left = 184
+    Top = 59
+    Width = 6
+    Height = 30
   end
-  object lbl_sinal: TLabel
-    Left = 200
-    Top = 120
-    Width = 9
-    Height = 45
+  object lbl_resultado: TLabel
+    Left = 440
+    Top = 59
+    Width = 6
+    Height = 30
   end
   object edt_vlr_1: TEdit
-    Left = 24
-    Top = 117
+    Left = 40
+    Top = 56
     Width = 121
-    Height = 53
+    Height = 38
     TabOrder = 0
+    Text = '0'
+    OnChange = edt_vlr_1Change
   end
   object edt_vlr_2: TEdit
-    Left = 288
-    Top = 117
+    Left = 233
+    Top = 56
     Width = 121
-    Height = 53
+    Height = 38
     TabOrder = 1
+    Text = '0'
+    OnChange = edt_vlr_2Change
   end
-  object btn_somar: TButton
-    Left = 8
-    Top = 256
-    Width = 129
-    Height = 57
+  object btn_adicao: TButton
+    Left = 48
+    Top = 128
+    Width = 75
+    Height = 25
     Caption = '+'
     TabOrder = 2
-    OnClick = btn_somarClick
+    OnClick = btn_adicaoClick
   end
-  object btn_subtrair: TButton
+  object btn_subtracao: TButton
     Left = 152
-    Top = 252
-    Width = 129
-    Height = 65
+    Top = 128
+    Width = 75
+    Height = 25
     Caption = '-'
     TabOrder = 3
-    OnClick = btn_subtrairClick
+    OnClick = btn_subtracaoClick
   end
-  object btn_multiplicar: TButton
-    Left = 304
-    Top = 252
-    Width = 129
-    Height = 65
+  object btn_multiplicacao: TButton
+    Left = 256
+    Top = 128
+    Width = 75
+    Height = 25
     Caption = '*'
     TabOrder = 4
-    OnClick = btn_multiplicarClick
+    OnClick = btn_multiplicacaoClick
   end
-  object btn_dividir: TButton
-    Left = 472
-    Top = 252
-    Width = 105
-    Height = 65
+  object btn_divisao: TButton
+    Left = 360
+    Top = 128
+    Width = 75
+    Height = 25
     Caption = '/'
     TabOrder = 5
-    OnClick = btn_dividirClick
+    OnClick = btn_divisaoClick
   end
   object btn_resultado: TButton
-    Left = 415
-    Top = 118
-    Width = 82
-    Height = 51
+    Left = 359
+    Top = 62
+    Width = 75
+    Height = 25
     Caption = '='
     TabOrder = 6
     OnClick = btn_resultadoClick
+  end
+  object btn_limpar: TButton
+    Left = 457
+    Top = 128
+    Width = 48
+    Height = 25
+    Caption = 'C'
+    TabOrder = 7
   end
 end
